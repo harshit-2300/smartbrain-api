@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app=express();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const cors=require('cors');
+
 const register = require('./controllers/register');
 const signin=require('./controllers/signin');
 const profile=require('./controllers/profile'); 
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(cors());
+
 
 
 
