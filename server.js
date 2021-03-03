@@ -9,8 +9,8 @@ const signin=require('./controllers/signin');
 const profile=require('./controllers/profile'); 
 const image=require('./controllers/image');
 
-app.listen(3001, ()=> {
-    console.log('app is running on port 3001')
+app.listen(process.env.PORT||3001, ()=> {
+    console.log(`app is running on port ${process.env.PORT}`)
 })
 
 const db = require('knex')({
