@@ -1,9 +1,9 @@
 const Clarifai= require('clarifai');
-
+const cors=require('cors');
 const app = new Clarifai.App({
     apiKey: '85c182b597a54221b53c891b37dae806'
    });
-
+app.use(cors());
 const handleImageUrl=(req,res)=>{
     app.models.predict(Clarifai.FACE_DETECT_MODEL,req.body.input)
     .then(data=>res.json(data))
